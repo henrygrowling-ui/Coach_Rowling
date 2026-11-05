@@ -1,6 +1,7 @@
 // Site text lives in site.json so it can be edited in Pages CMS (Site settings).
 import data from './site.json';
-import navData from './nav.json';
+import navRaw from './nav.json';
+const navData = navRaw.tabs;
 
 export const site = {
   name: data.name,

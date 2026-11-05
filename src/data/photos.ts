@@ -1,5 +1,6 @@
 // Photo list lives in photos.json so it can be edited in Pages CMS (Photos).
-import data from './photos.json';
+import raw from './photos.json';
+const data = raw.photos;
 
 export interface Photo { file: string; alt: string; caption: string; sport: string; }
 

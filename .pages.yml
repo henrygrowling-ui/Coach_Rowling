@@ -150,23 +150,27 @@ content:
     type: file
     path: src/data/photos.json
     format: json
-    list:
-      collapsible:
-        collapsed: true
-        summary: "{fields.caption}"
     fields:
-      - name: image
-        label: Photo
-        type: image
-        options:
-          path: public/images/photos
-      - { name: caption, label: Caption, type: string }
-      - { name: alt, label: Description for screen readers, type: string }
-      - name: sport
-        label: Category
-        type: select
-        options:
-          values: [Football, Baseball, Family]
+      - name: photos
+        label: Photos
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{fields.caption}"
+        fields:
+          - name: image
+            label: Photo
+            type: image
+            options:
+              path: public/images/photos
+          - { name: caption, label: Caption, type: string }
+          - { name: alt, label: Description for screen readers, type: string }
+          - name: sport
+            label: Category
+            type: select
+            options:
+              values: [Football, Baseball, Family]
 
   - name: headers
     label: Page headers (photo banner at the top of each page)
@@ -258,24 +262,28 @@ content:
     type: file
     path: src/data/nav.json
     format: json
-    list:
-      collapsible:
-        collapsed: true
-        summary: "{fields.position}. {fields.label}"
     fields:
-      - { name: position, label: "Position in the menu (1 = first)", type: number, required: true }
-      - { name: label, label: Tab name, type: string, required: true }
-      - name: href
-        label: Goes to page
-        type: select
-        required: true
-        options:
-          values:
-            - { name: "/", label: Home }
-            - { name: "/about/", label: About }
-            - { name: "/redclay-way/", label: RedClay Way }
-            - { name: "/playbook/", label: Playbook }
-            - { name: "/thoughts/", label: Thoughts }
-            - { name: "/media/", label: Media }
-            - { name: "/contact/", label: Contact }
-      - { name: show, label: Show in menu, type: boolean, default: true }
+      - name: tabs
+        label: Menu tabs
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{fields.position}. {fields.label}"
+        fields:
+          - { name: position, label: "Position in the menu (1 = first)", type: number, required: true }
+          - { name: label, label: Tab name, type: string, required: true }
+          - name: href
+            label: Goes to page
+            type: select
+            required: true
+            options:
+              values:
+                - { name: "/", label: Home }
+                - { name: "/about/", label: About }
+                - { name: "/redclay-way/", label: RedClay Way }
+                - { name: "/playbook/", label: Playbook }
+                - { name: "/thoughts/", label: Thoughts }
+                - { name: "/media/", label: Media }
+                - { name: "/contact/", label: Contact }
+          - { name: show, label: Show in menu, type: boolean, default: true }
