@@ -17,6 +17,7 @@ Sign in at [app.pagescms.org](https://app.pagescms.org) with GitHub and open thi
 - **Thoughts** and **Playbook**: add, edit or delete posts and materials
 - **Site settings**: bio, philosophy, principles, HARD values, career numbers and timeline
 - **Photos**: the Media gallery (upload, caption, reorder)
+- **Page headers**: the label, title, intro line and background photo at the top of each page
 
 Saving publishes the site in about a minute. The editor's setup is in `.pages.yml`.
 

@@ -170,3 +170,88 @@ content:
         type: select
         options:
           values: [Football, Baseball, Family]
+
+  - name: headers
+    label: Page headers (photo banner at the top of each page)
+    type: file
+    path: src/data/headers.json
+    format: json
+    fields:
+      - name: about
+        label: About page
+        type: object
+        fields:
+          - { name: eyebrow, label: Small label above the title, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: lead, label: Intro line, type: text }
+          - name: image
+            label: Background photo
+            type: image
+            options:
+              path: public/images/photos
+          - { name: position, label: "Photo focus: left-right then top-bottom, e.g. 80% 20% keeps the right side and the top in view", type: string }
+      - name: redclayWay
+        label: RedClay Way page
+        type: object
+        fields:
+          - { name: eyebrow, label: Small label above the title, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: lead, label: Intro line, type: text }
+          - name: image
+            label: Background photo
+            type: image
+            options:
+              path: public/images/photos
+          - { name: position, label: "Photo focus: left-right then top-bottom, e.g. 80% 20% keeps the right side and the top in view", type: string }
+      - name: playbook
+        label: Playbook page
+        type: object
+        fields:
+          - { name: eyebrow, label: Small label above the title, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: lead, label: Intro line, type: text }
+          - name: image
+            label: Background photo
+            type: image
+            options:
+              path: public/images/photos
+          - { name: position, label: "Photo focus: left-right then top-bottom, e.g. 80% 20% keeps the right side and the top in view", type: string }
+      - name: thoughts
+        label: Thoughts page
+        type: object
+        fields:
+          - { name: eyebrow, label: Small label above the title, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: lead, label: Intro line, type: text }
+          - name: image
+            label: Background photo
+            type: image
+            options:
+              path: public/images/photos
+          - { name: position, label: "Photo focus: left-right then top-bottom, e.g. 80% 20% keeps the right side and the top in view", type: string }
+      - name: media
+        label: Media page
+        type: object
+        fields:
+          - { name: eyebrow, label: Small label above the title, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: lead, label: Intro line, type: text }
+          - name: image
+            label: Background photo
+            type: image
+            options:
+              path: public/images/photos
+          - { name: position, label: "Photo focus: left-right then top-bottom, e.g. 80% 20% keeps the right side and the top in view", type: string }
+      - name: contact
+        label: Contact page
+        type: object
+        fields:
+          - { name: eyebrow, label: Small label above the title, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: lead, label: Intro line, type: text }
+          - name: image
+            label: Background photo
+            type: image
+            options:
+              path: public/images/photos
+          - { name: position, label: "Photo focus: left-right then top-bottom, e.g. 80% 20% keeps the right side and the top in view", type: string }
