@@ -9,7 +9,7 @@ const posts = (await getCollection('thoughts')).sort((a, b) => b.data.date.value
 const fmt = (d: Date) => d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 ---
 <Base title="Thoughts">
-  <PageHero eyebrow="From the notebook" title="Thoughts" lead="Reflections on coaching, leadership, seasons and the lessons that came with them." image="sideline-night-2.jpg" />
+  <PageHero eyebrow="From the notebook" title="Thoughts" lead="Reflections on coaching, leadership, seasons and the lessons that came with them." image="sideline-headset.jpg" position="60% 42%" />
   <section class="section">
     <div class="container grid grid-3">
       {posts.map((p) => (
