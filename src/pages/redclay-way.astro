@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import PageHero from '../components/PageHero.astro';
-import { principles } from '../data/site';
+import { principles, hard } from '../data/site';
 ---
 <Base title="RedClay Way">
   <PageHero eyebrow="Our identity" title="The RedClay Way" lead="What this page holds is up to Coach. Placeholder: the standards, culture and identity of the program." />
@@ -11,6 +11,11 @@ import { principles } from '../data/site';
       <p class="note">Placeholder content. Tell Claude what the RedClay Way means and this page will be written around it.</p>
       <h2>What It Means</h2>
       <p>Explain the name and the idea behind it here.</p>
+      <h2>We Forge HARD Student Athletes</h2>
+      <p>Hard doesn't mean rough. It means unbreakable, strong and unyielding: athletes who have been through something difficult and come out with</p>
+      <div class="hard">
+        {hard.map((h) => <div><span>{h.letter}</span>{h.word}</div>)}
+      </div>
     </div>
   </section>
 
@@ -25,3 +30,9 @@ import { principles } from '../data/site';
     </div>
   </section>
 </Base>
+
+<style>
+  .hard { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-top: 16px; }
+  .hard div { background: var(--ink); color: var(--cream); border-radius: var(--radius); padding: 16px; font-family: var(--font-head); text-transform: uppercase; letter-spacing: 0.06em; }
+  .hard span { display: block; font-size: 2.6rem; line-height: 1; color: var(--clay); }
+</style>

@@ -1,25 +1,21 @@
 ---
 import Base from '../layouts/Base.astro';
 import PageHero from '../components/PageHero.astro';
-import { site, stats, timeline } from '../data/site';
+import { site, stats, timeline, bio, quickFacts } from '../data/site';
 ---
 <Base title="About">
-  <PageHero eyebrow="My Story" title={site.fullName} lead={site.tagline} />
+  <PageHero eyebrow="My Story" title={site.fullName} lead={site.philosophy} />
 
   <section class="section">
     <div class="container about-row">
       <div class="photo-placeholder" style="aspect-ratio: 4/5; min-height: 0;">Portrait</div>
       <div class="prose">
         <h2 style="margin-top:0">Bio</h2>
-        <p>Your full bio goes here. Where you grew up, where you played, how you got into coaching, and the programs you've been part of.</p>
-        <p>Share what drives you as a coach and what you want every player to take with them after they graduate.</p>
+        {bio.map((para) => <p>{para}</p>)}
         <h2>Quick Facts</h2>
-        <ul>
-          <li>Hometown: TBD</li>
-          <li>Played: TBD</li>
-          <li>Current school: TBD</li>
-          <li>Sports coached: Football, Baseball</li>
-        </ul>
+        <dl class="facts">
+          {quickFacts.map((f) => (<><dt>{f.label}</dt><dd>{f.value}</dd></>))}
+        </dl>
       </div>
     </div>
   </section>
@@ -49,6 +45,10 @@ import { site, stats, timeline } from '../data/site';
 </Base>
 
 <style>
+  .facts { display: grid; grid-template-columns: max-content 1fr; gap: 8px 20px; margin: 0; }
+  .facts dt { font-weight: 600; }
+  .facts dd { margin: 0; color: var(--ink-soft); }
+  @media (max-width: 520px) { .facts { grid-template-columns: 1fr; gap: 2px; } .facts dd { margin-bottom: 10px; } }
   .about-row { display: grid; grid-template-columns: 1fr 1.6fr; gap: 48px; align-items: start; }
   .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 24px; }
   .stat { display: flex; flex-direction: column; }
