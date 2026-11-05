@@ -13,19 +13,19 @@
       "show": true
     },
     {
-      "position": 4,
+      "position": 3,
       "label": "Playbook",
       "href": "/playbook/",
       "show": true
     },
     {
-      "position": 5,
+      "position": 4,
       "label": "Thoughts",
       "href": "/thoughts/",
       "show": true
     },
     {
-      "position": 6,
+      "position": 5,
       "label": "Media",
       "href": "/media/",
       "show": true
