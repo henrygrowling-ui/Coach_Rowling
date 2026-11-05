@@ -1,0 +1,19 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import PostCard from '../../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('thoughts')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const fmt = (d: Date) => d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+---
+<Base title="Thoughts">
+  <PageHero eyebrow="From the notebook" title="Thoughts" lead="Reflections on coaching, leadership, seasons and the lessons that came with them." />
+  <section class="section">
+    <div class="container grid grid-3">
+      {posts.map((p) => (
+        <PostCard href={`/thoughts/${p.id}/`} title={p.data.title} summary={p.data.summary} meta={`${fmt(p.data.date)} · ${p.data.sport}`} />
+      ))}
+    </div>
+  </section>
+</Base>
