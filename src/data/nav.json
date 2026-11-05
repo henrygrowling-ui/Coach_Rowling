@@ -1,9 +1,9 @@
 [
-  { "label": "Home", "href": "/", "show": true },
-  { "label": "About", "href": "/about/", "show": true },
-  { "label": "RedClay Way", "href": "/redclay-way/", "show": true },
-  { "label": "Playbook", "href": "/playbook/", "show": true },
-  { "label": "Thoughts", "href": "/thoughts/", "show": true },
-  { "label": "Media", "href": "/media/", "show": true },
-  { "label": "Contact", "href": "/contact/", "show": true }
+  {"position": 1, "label": "Home", "href": "/", "show": true},
+  {"position": 2, "label": "About", "href": "/about/", "show": true},
+  {"position": 3, "label": "RedClay Way", "href": "/redclay-way/", "show": true},
+  {"position": 4, "label": "Playbook", "href": "/playbook/", "show": true},
+  {"position": 5, "label": "Thoughts", "href": "/thoughts/", "show": true},
+  {"position": 6, "label": "Media", "href": "/media/", "show": true},
+  {"position": 7, "label": "Contact", "href": "/contact/", "show": true}
 ]
