@@ -1,0 +1,156 @@
+---
+import { u } from '../lib/url';
+import Base from '../layouts/Base.astro';
+import PostCard from '../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+import { site, principles, stats } from '../data/site';
+
+const posts = (await getCollection('thoughts')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 3);
+const featured = (await getCollection('playbook')).filter((p) => p.data.featured).slice(0, 4);
+const fmt = (d: Date) => d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+---
+<Base>
+  <!-- 1. Hero -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">{site.tagline}</p>
+        <h1>{site.fullName}</h1>
+        <p class="hero-lead">{site.philosophy}</p>
+        <div class="hero-actions">
+          <a class="btn" href={u("/playbook/")}>Explore the Playbook</a>
+          <a class="btn btn--ghost" href={u("/about/")}>My Story</a>
+        </div>
+      </div>
+      <div class="photo-placeholder hero-photo">Action photo</div>
+    </div>
+  </section>
+
+  <!-- 2. Core principles -->
+  <section class="section section--sand">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">What we believe</p>
+          <h2>Core Principles</h2>
+        </div>
+        <a class="link-arrow" href={u("/redclay-way/")}>The RedClay Way</a>
+      </div>
+      <div class="grid grid-3">
+        {principles.map((p, i) => (
+          <div class="principle">
+            <span class="principle-num">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{p.title}</h3>
+            <p>{p.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Latest thoughts -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">From the notebook</p>
+          <h2>Latest Thoughts</h2>
+        </div>
+        <a class="link-arrow" href={u("/thoughts/")}>All posts</a>
+      </div>
+      <div class="grid grid-3">
+        {posts.map((p) => (
+          <PostCard href={u(`/thoughts/${p.id}/`)} title={p.data.title} summary={p.data.summary} meta={`${fmt(p.data.date)} · ${p.data.sport}`} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. From the Playbook -->
+  <section class="section section--ink">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Coaching materials</p>
+          <h2>From the Playbook</h2>
+        </div>
+        <a class="link-arrow" href={u("/playbook/")} style="color: var(--sand)">Full playbook</a>
+      </div>
+      <div class="grid grid-3">
+        {featured.map((p) => (
+          <PostCard href={u(`/playbook/${p.id}/`)} title={p.data.title} summary={p.data.summary} tags={[p.data.sport, p.data.type]} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Career at a glance -->
+  <section class="section section--clay">
+    <div class="container">
+      <p class="eyebrow">Career at a glance</p>
+      <div class="stats">
+        {stats.map((s) => (
+          <div class="stat">
+            <span class="stat-value">{s.value}</span>
+            <span class="stat-label">{s.label}</span>
+          </div>
+        ))}
+      </div>
+      <a class="btn btn--ghost" href={u("/about/#timeline")}>See the full timeline</a>
+    </div>
+  </section>
+
+  <!-- 6. Featured video -->
+  <section class="section">
+    <div class="container video-row">
+      <div class="photo-placeholder video">Featured video</div>
+      <div>
+        <p class="eyebrow">Watch</p>
+        <h2>Featured Video</h2>
+        <p>A talk, a clinic session or a game clip goes here. Add a YouTube link and it embeds automatically.</p>
+        <a class="link-arrow" href={u("/media/")}>All media</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Bio closer -->
+  <section class="section section--sand">
+    <div class="container bio-row">
+      <div class="photo-placeholder portrait">Portrait</div>
+      <div>
+        <p class="eyebrow">About Coach</p>
+        <h2>{site.fullName}</h2>
+        <p>A short bio goes here: where you coach, how long you've been at it, what you care about most in a program, and the people who shaped you as a coach.</p>
+        <div class="hero-actions">
+          <a class="btn" href={u("/contact/")}>Get in touch</a>
+          <a class="btn btn--ghost" href={u("/about/")}>Read more</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero { background: linear-gradient(135deg, var(--ink) 0%, #2a3a45 100%); color: var(--cream); padding: clamp(56px, 9vw, 120px) 0; }
+  .hero-inner { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center; }
+  .hero-lead { font-size: 1.25rem; color: var(--sand); max-width: 560px; }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+  .hero-photo { min-height: 380px; }
+  .principle { border-top: 3px solid var(--clay); padding-top: 16px; }
+  .principle-num { font-family: var(--font-head); color: var(--clay); font-size: 1.1rem; }
+  .principle h3 { margin: 4px 0 6px; }
+  .principle p { margin: 0; color: var(--ink-soft); }
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 24px; margin: 8px 0 36px; }
+  .stat { display: flex; flex-direction: column; }
+  .stat-value { font-family: var(--font-head); font-size: clamp(2.8rem, 6vw, 4rem); line-height: 1; }
+  .stat-label { text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.9rem; opacity: 0.9; margin-top: 6px; }
+  .video-row, .bio-row { display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: center; }
+  .bio-row { grid-template-columns: 1fr 1.4fr; }
+  .video { aspect-ratio: 16 / 9; min-height: 0; background: repeating-linear-gradient(135deg, #2a3a45 0 14px, #33444f 14px 28px); color: var(--sand); }
+  .portrait { aspect-ratio: 4 / 5; min-height: 0; }
+  @media (max-width: 820px) {
+    .hero-inner, .video-row, .bio-row { grid-template-columns: 1fr; }
+    .hero-photo { min-height: 240px; }
+    .portrait { max-width: 360px; }
+  }
+</style>

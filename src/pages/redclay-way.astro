@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import { principles } from '../data/site';
+---
+<Base title="RedClay Way">
+  <PageHero eyebrow="Our identity" title="The RedClay Way" lead="What this page holds is up to Coach. Placeholder: the standards, culture and identity of the program." />
+
+  <section class="section">
+    <div class="container prose">
+      <p class="note">Placeholder content. Tell Claude what the RedClay Way means and this page will be written around it.</p>
+      <h2>What It Means</h2>
+      <p>Explain the name and the idea behind it here.</p>
+    </div>
+  </section>
+
+  <section class="section section--sand">
+    <div class="container">
+      <h2>The Standards</h2>
+      <div class="grid grid-3" style="margin-top: 24px">
+        {principles.map((p) => (
+          <div class="card"><h3>{p.title}</h3><p>{p.text}</p></div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

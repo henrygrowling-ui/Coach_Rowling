@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+const slots = ['Clinic talk', 'Game highlights', 'Practice film', 'Interview', 'Team banquet', 'Photo gallery'];
+---
+<Base title="Media">
+  <PageHero eyebrow="Watch and listen" title="Media" lead="Videos, talks, interviews, press and photos." />
+  <section class="section">
+    <div class="container grid grid-3">
+      {slots.map((s) => (
+        <div class="card" style="padding: 0; overflow: hidden">
+          <div class="photo-placeholder" style="aspect-ratio: 16/9; min-height: 0; border-radius: 0">{s}</div>
+          <div style="padding: 20px"><h3>{s}</h3><p>Placeholder. Add a video link or photos.</p></div>
+        </div>
+      ))}
+    </div>
+  </section>
+</Base>
