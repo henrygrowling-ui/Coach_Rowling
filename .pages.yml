@@ -15,8 +15,6 @@ content:
     view:
       fields: [title, date, sport]
       primary: title
-      sort: date
-      order: desc
     fields:
       - name: title
         label: Title
@@ -49,7 +47,6 @@ content:
     view:
       fields: [title, sport, type]
       primary: title
-      sort: title
     fields:
       - name: title
         label: Title
