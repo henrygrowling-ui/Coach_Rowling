@@ -1,0 +1,16 @@
+---
+// HR monogram: the H's right post doubles as the R's stem.
+interface Props { size?: number; }
+const { size = 40 } = Astro.props;
+---
+<svg width={size} height={size} viewBox="12 20 76 60" aria-hidden="true">
+  <g fill="#f7f2ea">
+    <rect x="19" y="25" width="11" height="50" />
+    <rect x="19" y="45" width="30" height="10" />
+    <rect x="43" y="25" width="11" height="50" />
+  </g>
+  <g fill="none" stroke="#b5462b">
+    <path d="M48 30 H65 a11.5 11.5 0 0 1 0 23 H48" stroke-width="10" />
+    <path d="M62 53 L81 75" stroke-width="11.5" />
+  </g>
+</svg>
