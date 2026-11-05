@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import PageHero from '../components/PageHero.astro';
+import { u } from '../lib/url';
 import { site, stats, timeline, bio, quickFacts } from '../data/site';
 ---
 <Base title="About">
@@ -8,7 +9,7 @@ import { site, stats, timeline, bio, quickFacts } from '../data/site';
 
   <section class="section">
     <div class="container about-row">
-      <div class="photo-placeholder" style="aspect-ratio: 4/5; min-height: 0;">Portrait</div>
+      <img class="headshot" src={u("/images/headshot.jpg")} alt={`${site.fullName} headshot`} width="880" height="1200" />
       <div class="prose">
         <h2 style="margin-top:0">Bio</h2>
         {bio.map((para) => <p>{para}</p>)}
@@ -49,6 +50,7 @@ import { site, stats, timeline, bio, quickFacts } from '../data/site';
   .facts dt { font-weight: 600; }
   .facts dd { margin: 0; color: var(--ink-soft); }
   @media (max-width: 520px) { .facts { grid-template-columns: 1fr; gap: 2px; } .facts dd { margin-bottom: 10px; } }
+  .headshot { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: top; border-radius: var(--radius); }
   .about-row { display: grid; grid-template-columns: 1fr 1.6fr; gap: 48px; align-items: start; }
   .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 24px; }
   .stat { display: flex; flex-direction: column; }
