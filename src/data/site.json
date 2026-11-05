@@ -1,0 +1,129 @@
+{
+  "name": "Coach Rowling",
+  "fullName": "Henry Rowling",
+  "tagline": "Defensive coordinator · Strength & conditioning · Football and baseball coach",
+  "philosophy": "Success cannot be measured by wins alone. Our job is to be the bridge from adolescence to adulthood, forging HARD student athletes on and off the field.",
+  "email": "coach@example.com",
+  "shortBio": "Born and raised in East Cobb, Coach Rowling played football and baseball at Walton High School and went on to play baseball at the University of Georgia. Since 2018 he has built and run the strength and conditioning program at Cambridge High School, coached special teams, served as defensive coordinator since 2023, and coached baseball.",
+  "bio": [
+    "Henry Rowling's story runs through high school sports. Born and raised in East Cobb, he played football and baseball at Walton High School, where he learned what hard work, dedication and a real team look like. He says plainly that he wouldn't be the man he is today without high school football, and giving today's players that same experience is why he coaches.",
+    "He went on to the University of Georgia on a baseball scholarship, and worked as a strength and conditioning intern while he was there.",
+    "In 2018 Cambridge High School brought him in to build its strength and conditioning program, and he has run it ever since: every athlete in the building comes through it. He oversaw the weight room renovation, coached special teams, and has been Cambridge's defensive coordinator since 2023, developing six first- or second-team all-region linebackers. He also coaches baseball, so he knows what it takes to run a program in season and out. He holds an Ed.S. from Valdosta State University.",
+    "His philosophy is simple: coach the player first, demand full-speed effort, and win the details. Wins matter, and he wants banners and rings as much as anyone. But the measure he cares about most is being able to look a parent in the eye and say he made their son or daughter a better person."
+  ],
+  "quickFacts": [
+    {
+      "label": "Hometown",
+      "value": "East Cobb, Georgia"
+    },
+    {
+      "label": "High school",
+      "value": "Walton High School (football and baseball)"
+    },
+    {
+      "label": "College",
+      "value": "University of Georgia (baseball scholarship)"
+    },
+    {
+      "label": "Graduate degree",
+      "value": "Ed.S., Valdosta State University"
+    },
+    {
+      "label": "School",
+      "value": "Cambridge High School, since 2018"
+    },
+    {
+      "label": "Roles",
+      "value": "Defensive coordinator (since 2023), strength and conditioning, special teams, baseball"
+    }
+  ],
+  "principles": [
+    {
+      "title": "Coach the Player First",
+      "text": "Every kid is different. Coaching is teaching, and you have to reach each player where he is."
+    },
+    {
+      "title": "Effort & Hard Work",
+      "text": "Mistakes are OK if they come at full speed with our best effort. We can fix mistakes. It is very hard to coach effort."
+    },
+    {
+      "title": "Detail Oriented",
+      "text": "The little things get you beat. Do the common things uncommonly well and you have an immediate advantage."
+    },
+    {
+      "title": "Grow Our Own",
+      "text": "We develop, win and lose with our own kids. That is what builds buy-in from the school and the community."
+    },
+    {
+      "title": "Player Focused",
+      "text": "It is about the kids, not us. If we can't put our egos aside for them, why did we get into coaching?"
+    },
+    {
+      "title": "Have Fun",
+      "text": "It's a game. The field, the weight room and the film room should add up to an experience players look back on fondly."
+    }
+  ],
+  "hard": [
+    {
+      "letter": "H",
+      "word": "Heart"
+    },
+    {
+      "letter": "A",
+      "word": "Adaptable"
+    },
+    {
+      "letter": "R",
+      "word": "Resilient"
+    },
+    {
+      "letter": "D",
+      "word": "Dedicated"
+    }
+  ],
+  "stats": [
+    {
+      "value": "2018",
+      "label": "Building Cambridge S&C since"
+    },
+    {
+      "value": "2023",
+      "label": "Defensive coordinator since"
+    },
+    {
+      "value": "6",
+      "label": "All-region linebackers developed"
+    },
+    {
+      "value": "2",
+      "label": "Sports coached"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "Walton",
+      "title": "Walton High School",
+      "text": "Played football and baseball in East Cobb and learned what hard work and a real team look like."
+    },
+    {
+      "year": "UGA",
+      "title": "University of Georgia",
+      "text": "Played baseball on scholarship and worked as a strength and conditioning intern."
+    },
+    {
+      "year": "2018",
+      "title": "Cambridge High School",
+      "text": "Brought in to build the strength and conditioning program. Also coached special teams and baseball, and oversaw the weight room renovation."
+    },
+    {
+      "year": "2023",
+      "title": "Defensive coordinator",
+      "text": "Took over Cambridge's defense and has developed six all-region linebackers."
+    },
+    {
+      "year": "Ed.S.",
+      "title": "Valdosta State University",
+      "text": "Earned an education specialist degree."
+    }
+  ]
+}

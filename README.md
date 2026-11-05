@@ -10,11 +10,23 @@ npm run dev      # http://localhost:4321
 npm run build    # outputs the static site to dist/
 ```
 
+## Editing without code
+
+Sign in at [app.pagescms.org](https://app.pagescms.org) with GitHub and open this repository. You can edit:
+
+- **Thoughts** and **Playbook**: add, edit or delete posts and materials
+- **Site settings**: bio, philosophy, principles, HARD values, career numbers and timeline
+- **Photos**: the Media gallery (upload, caption, reorder)
+
+Saving publishes the site in about a minute. The editor's setup is in `.pages.yml`.
+
 ## Where things live
 
 | What | Where |
 |---|---|
-| Menu, philosophy, principles, career numbers, timeline | `src/data/site.ts` |
+| Bio, philosophy, principles, career numbers, timeline | `src/data/site.json` |
+| Photo gallery list | `src/data/photos.json` |
+| Menu | `src/data/site.ts` |
 | Blog posts (Thoughts) | `src/content/thoughts/*.md` |
 | Coaching materials (Playbook) | `src/content/playbook/*.md` |
 | Pages | `src/pages/` |

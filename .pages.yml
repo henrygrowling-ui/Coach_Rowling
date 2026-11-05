@@ -1,0 +1,172 @@
+# Editor setup for Pages CMS (https://app.pagescms.org).
+# Saving in the editor commits to this repo and the site republishes in about a minute.
+
+media:
+  input: public/images
+  output: /images
+  extensions: [jpg, jpeg, png, webp, gif]
+
+content:
+  - name: thoughts
+    label: Thoughts (blog posts)
+    type: collection
+    path: src/content/thoughts
+    filename: "{primary}.md"
+    view:
+      fields: [title, date, sport]
+      primary: title
+      sort: date
+      order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+      - name: summary
+        label: Short summary (shows on the cards)
+        type: text
+        required: true
+      - name: sport
+        label: Sport
+        type: select
+        options:
+          values: [Football, Baseball, General]
+      - name: body
+        label: Post
+        type: rich-text
+        options:
+          format: markdown
+
+  - name: playbook
+    label: Playbook (coaching materials)
+    type: collection
+    path: src/content/playbook
+    filename: "{primary}.md"
+    view:
+      fields: [title, sport, type]
+      primary: title
+      sort: title
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: sport
+        label: Sport
+        type: select
+        required: true
+        options:
+          values: [Football, Baseball, General]
+      - name: type
+        label: Type
+        type: select
+        required: true
+        options:
+          values: [Drill, Practice Plan, System, Program, Leadership]
+      - name: summary
+        label: Short summary (shows on the cards)
+        type: text
+        required: true
+      - name: featured
+        label: Feature on the homepage
+        type: boolean
+      - name: body
+        label: Details
+        type: rich-text
+        options:
+          format: markdown
+
+  - name: site
+    label: Site settings (bio, philosophy, numbers)
+    type: file
+    path: src/data/site.json
+    format: json
+    fields:
+      - { name: name, label: Site name (top left), type: string }
+      - { name: fullName, label: Your full name, type: string }
+      - { name: tagline, label: Tagline (under your name), type: string }
+      - { name: philosophy, label: Coaching philosophy (one line), type: text }
+      - { name: email, label: Contact email, type: string }
+      - { name: shortBio, label: Short bio (homepage), type: text }
+      - name: bio
+        label: Full bio paragraphs (About page)
+        type: text
+        list: true
+      - name: quickFacts
+        label: Quick facts (About page)
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{fields.label}: {fields.value}"
+        fields:
+          - { name: label, label: Label, type: string }
+          - { name: value, label: Value, type: string }
+      - name: principles
+        label: Core principles (homepage)
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{fields.title}"
+        fields:
+          - { name: title, label: Title, type: string }
+          - { name: text, label: Text, type: text }
+      - name: hard
+        label: HARD values (RedClay Way page)
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{fields.letter} = {fields.word}"
+        fields:
+          - { name: letter, label: Letter, type: string }
+          - { name: word, label: Word, type: string }
+      - name: stats
+        label: Career numbers (big red band)
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{fields.value} {fields.label}"
+        fields:
+          - { name: value, label: Number, type: string }
+          - { name: label, label: Label, type: string }
+      - name: timeline
+        label: Career timeline (About page)
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{fields.year} {fields.title}"
+        fields:
+          - { name: year, label: Year or short label, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: text, label: Description, type: text }
+
+  - name: photos
+    label: Photos (Media gallery)
+    type: file
+    path: src/data/photos.json
+    format: json
+    list:
+      collapsible:
+        collapsed: true
+        summary: "{fields.caption}"
+    fields:
+      - name: image
+        label: Photo
+        type: image
+        options:
+          path: public/images/photos
+      - { name: caption, label: Caption, type: string }
+      - { name: alt, label: Description for screen readers, type: string }
+      - name: sport
+        label: Category
+        type: select
+        options:
+          values: [Football, Baseball, Family]
