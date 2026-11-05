@@ -264,8 +264,9 @@ content:
     list:
       collapsible:
         collapsed: true
-        summary: "{fields.label}"
+        summary: "{fields.position}. {fields.label}"
     fields:
+      - { name: position, label: "Position in the menu (1 = first)", type: number, required: true }
       - { name: label, label: Tab name, type: string, required: true }
       - name: href
         label: Goes to page

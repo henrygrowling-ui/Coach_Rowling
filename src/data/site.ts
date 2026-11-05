@@ -10,7 +10,11 @@ export const site = {
   email: data.email,
 };
 
-// Menu tabs live in nav.json so they can be renamed, reordered or hidden in Pages CMS.
-export const nav = navData.filter((item) => item.show !== false).map(({ label, href }) => ({ label, href }));
+// Menu tabs live in nav.json so they can be renamed, reordered (by position) or hidden in Pages CMS.
+export const nav = navData
+  .map((item, i) => ({ ...item, pos: Number(item.position) || i + 1 }))
+  .filter((item) => item.show !== false)
+  .sort((a, b) => a.pos - b.pos)
+  .map(({ label, href }) => ({ label, href }));
 
 export const { shortBio, bio, quickFacts, principles, hard, stats, timeline } = data;
