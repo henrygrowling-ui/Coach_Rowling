@@ -5,7 +5,7 @@ import { u } from '../lib/url';
 import { site, stats, timeline, bio, quickFacts } from '../data/site';
 ---
 <Base title="About">
-  <PageHero eyebrow="My Story" title={site.fullName} lead={site.philosophy} />
+  <PageHero eyebrow="My Story" title={site.fullName} lead={site.philosophy} image="sideline-night.jpg" />
 
   <section class="section">
     <div class="container about-row">
@@ -17,6 +17,17 @@ import { site, stats, timeline, bio, quickFacts } from '../data/site';
         <dl class="facts">
           {quickFacts.map((f) => (<><dt>{f.label}</dt><dd>{f.value}</dd></>))}
         </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--sand">
+    <div class="container family-row">
+      <img class="family-photo" src={u('/images/photos/family.jpg')} alt="Coach Rowling with his wife and daughter on the field" loading="lazy" />
+      <div>
+        <p class="eyebrow">Off the field</p>
+        <h2>Family</h2>
+        <p>Coaching is a family commitment. His wife is all in on the program, and these days their daughter is on the sideline too.</p>
       </div>
     </div>
   </section>
@@ -51,6 +62,9 @@ import { site, stats, timeline, bio, quickFacts } from '../data/site';
   .facts dd { margin: 0; color: var(--ink-soft); }
   @media (max-width: 520px) { .facts { grid-template-columns: 1fr; gap: 2px; } .facts dd { margin-bottom: 10px; } }
   .headshot { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: top; border-radius: var(--radius); }
+  .family-row { display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: center; }
+  .family-photo { width: 100%; border-radius: var(--radius); }
+  @media (max-width: 820px) { .family-row { grid-template-columns: 1fr; } }
   .about-row { display: grid; grid-template-columns: 1fr 1.6fr; gap: 48px; align-items: start; }
   .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 24px; }
   .stat { display: flex; flex-direction: column; }

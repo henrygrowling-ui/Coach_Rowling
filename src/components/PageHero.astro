@@ -1,8 +1,12 @@
 ---
-interface Props { eyebrow?: string; title: string; lead?: string; }
-const { eyebrow, title, lead } = Astro.props;
+import { u } from '../lib/url';
+interface Props { eyebrow?: string; title: string; lead?: string; image?: string; position?: string; }
+const { eyebrow, title, lead, image, position = 'center' } = Astro.props;
+const style = image
+  ? `background-image: linear-gradient(90deg, rgba(29,42,51,0.94) 0%, rgba(29,42,51,0.78) 55%, rgba(29,42,51,0.45) 100%), url(${u('/images/photos/' + image)}); background-size: cover; background-position: ${position};`
+  : undefined;
 ---
-<section class="page-hero">
+<section class="page-hero" style={style}>
   <div class="container">
     {eyebrow && <p class="eyebrow" style="color: var(--clay)">{eyebrow}</p>}
     <h1>{title}</h1>

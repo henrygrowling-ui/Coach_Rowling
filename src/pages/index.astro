@@ -1,5 +1,6 @@
 ---
 import { u } from '../lib/url';
+import { photos } from '../data/photos';
 import Base from '../layouts/Base.astro';
 import PostCard from '../components/PostCard.astro';
 import { getCollection } from 'astro:content';
@@ -22,7 +23,7 @@ const fmt = (d: Date) => d.toLocaleDateString('en-US', { month: 'short', day: 'n
           <a class="btn btn--ghost" href={u("/about/")}>My Story</a>
         </div>
       </div>
-      <div class="photo-placeholder hero-photo">Action photo</div>
+      <img class="hero-photo" src={u("/images/photos/fist-bump.jpg")} alt="Coach Rowling fist-bumping a player on the field" />
     </div>
   </section>
 
@@ -100,7 +101,26 @@ const fmt = (d: Date) => d.toLocaleDateString('en-US', { month: 'short', day: 'n
     </div>
   </section>
 
-  <!-- 6. Featured video -->
+  <!-- 6. On the field photo strip -->
+  <section class="section section--ink">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Game day</p>
+          <h2>On the Field</h2>
+        </div>
+        <a class="link-arrow" href={u("/media/")} style="color: var(--sand)">All photos</a>
+      </div>
+      <div class="strip">
+        {['celebration.jpg', 'player-coaching.jpg', 'sideline-night.jpg', 'baseball-mound-visit.jpg'].map((f) => {
+          const p = photos.find((x) => x.file === f)!;
+          return <img src={u(`/images/photos/${p.file}`)} alt={p.alt} loading="lazy" />;
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Featured video -->
   <section class="section">
     <div class="container video-row">
       <div class="photo-placeholder video">Featured video</div>
@@ -135,7 +155,10 @@ const fmt = (d: Date) => d.toLocaleDateString('en-US', { month: 'short', day: 'n
   .hero-inner { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center; }
   .hero-lead { font-size: 1.25rem; color: var(--sand); max-width: 560px; }
   .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
-  .hero-photo { min-height: 380px; }
+  .hero-photo { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: var(--radius); box-shadow: 0 20px 40px rgba(0,0,0,0.35); }
+  .strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .strip img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radius); }
+  @media (max-width: 820px) { .strip { grid-template-columns: repeat(2, 1fr); } }
   .principle { border-top: 3px solid var(--clay); padding-top: 16px; }
   .principle-num { font-family: var(--font-head); color: var(--clay); font-size: 1.1rem; }
   .principle h3 { margin: 4px 0 6px; }
@@ -150,7 +173,6 @@ const fmt = (d: Date) => d.toLocaleDateString('en-US', { month: 'short', day: 'n
   .portrait { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: top; border-radius: var(--radius); }
   @media (max-width: 820px) {
     .hero-inner, .video-row, .bio-row { grid-template-columns: 1fr; }
-    .hero-photo { min-height: 240px; }
     .portrait { max-width: 360px; }
   }
 </style>
