@@ -1,86 +1,88 @@
-[
-  {
-    "image": "/images/photos/fist-bump.jpg",
-    "caption": "Celebrating with a player",
-    "alt": "Coach Rowling fist-bumping a player on the field",
-    "sport": "Football"
-  },
-  {
-    "image": "/images/photos/celebration.jpg",
-    "caption": "Big play celebration",
-    "alt": "Coach Rowling celebrating with players after a big play",
-    "sport": "Football"
-  },
-  {
-    "image": "/images/photos/team-walkout.jpg",
-    "caption": "Team walkout",
-    "alt": "Coach Rowling walking out with the team past the American flag",
-    "sport": "Football"
-  },
-  {
-    "image": "/images/photos/player-coaching.jpg",
-    "caption": "Coaching on the sideline",
-    "alt": "Coach Rowling talking with a player on the sideline",
-    "sport": "Football"
-  },
-  {
-    "image": "/images/photos/sideline-headset.jpg",
-    "caption": "On the headset",
-    "alt": "Coach Rowling in a headset talking to a player",
-    "sport": "Football"
-  },
-  {
-    "image": "/images/photos/sideline-coaching.jpg",
-    "caption": "Between series",
-    "alt": "Coach Rowling coaching a player on the sideline",
-    "sport": "Football"
-  },
-  {
-    "image": "/images/photos/sideline-headset-2.jpg",
-    "caption": "Game day",
-    "alt": "Coach Rowling on the headset during a game",
-    "sport": "Football"
-  },
-  {
-    "image": "/images/photos/sideline-night.jpg",
-    "caption": "Friday night signals",
-    "alt": "Coach Rowling signaling from the sideline at a night game",
-    "sport": "Football"
-  },
-  {
-    "image": "/images/photos/sideline-night-2.jpg",
-    "caption": "Friday night lights",
-    "alt": "Coach Rowling on the sideline with the team at night",
-    "sport": "Football"
-  },
-  {
-    "image": "/images/photos/pregame-field.jpg",
-    "caption": "Pregame",
-    "alt": "Coach Rowling on the field before a game",
-    "sport": "Football"
-  },
-  {
-    "image": "/images/photos/sideline-signals.jpg",
-    "caption": "Calling the defense",
-    "alt": "Coach Rowling signaling in the defense from the sideline",
-    "sport": "Football"
-  },
-  {
-    "image": "/images/photos/baseball-mound-visit.jpg",
-    "caption": "On the diamond",
-    "alt": "Coach Rowling on the baseball field during a game",
-    "sport": "Baseball"
-  },
-  {
-    "image": "/images/photos/baseball-field.jpg",
-    "caption": "Baseball season",
-    "alt": "Coach Rowling and another coach walking the baseball field",
-    "sport": "Baseball"
-  },
-  {
-    "image": "/images/photos/family.jpg",
-    "caption": "Family on the field",
-    "alt": "Coach Rowling with his wife and daughter on the field",
-    "sport": "Family"
-  }
-]
+{
+  "photos": [
+    {
+      "image": "/images/photos/fist-bump.jpg",
+      "caption": "Celebrating with a player",
+      "alt": "Coach Rowling fist-bumping a player on the field",
+      "sport": "Football"
+    },
+    {
+      "image": "/images/photos/celebration.jpg",
+      "caption": "Big play celebration",
+      "alt": "Coach Rowling celebrating with players after a big play",
+      "sport": "Football"
+    },
+    {
+      "image": "/images/photos/team-walkout.jpg",
+      "caption": "Team walkout",
+      "alt": "Coach Rowling walking out with the team past the American flag",
+      "sport": "Football"
+    },
+    {
+      "image": "/images/photos/player-coaching.jpg",
+      "caption": "Coaching on the sideline",
+      "alt": "Coach Rowling talking with a player on the sideline",
+      "sport": "Football"
+    },
+    {
+      "image": "/images/photos/sideline-headset.jpg",
+      "caption": "On the headset",
+      "alt": "Coach Rowling in a headset talking to a player",
+      "sport": "Football"
+    },
+    {
+      "image": "/images/photos/sideline-coaching.jpg",
+      "caption": "Between series",
+      "alt": "Coach Rowling coaching a player on the sideline",
+      "sport": "Football"
+    },
+    {
+      "image": "/images/photos/sideline-headset-2.jpg",
+      "caption": "Game day",
+      "alt": "Coach Rowling on the headset during a game",
+      "sport": "Football"
+    },
+    {
+      "image": "/images/photos/sideline-night.jpg",
+      "caption": "Friday night signals",
+      "alt": "Coach Rowling signaling from the sideline at a night game",
+      "sport": "Football"
+    },
+    {
+      "image": "/images/photos/sideline-night-2.jpg",
+      "caption": "Friday night lights",
+      "alt": "Coach Rowling on the sideline with the team at night",
+      "sport": "Football"
+    },
+    {
+      "image": "/images/photos/pregame-field.jpg",
+      "caption": "Pregame",
+      "alt": "Coach Rowling on the field before a game",
+      "sport": "Football"
+    },
+    {
+      "image": "/images/photos/sideline-signals.jpg",
+      "caption": "Calling the defense",
+      "alt": "Coach Rowling signaling in the defense from the sideline",
+      "sport": "Football"
+    },
+    {
+      "image": "/images/photos/baseball-mound-visit.jpg",
+      "caption": "On the diamond",
+      "alt": "Coach Rowling on the baseball field during a game",
+      "sport": "Baseball"
+    },
+    {
+      "image": "/images/photos/baseball-field.jpg",
+      "caption": "Baseball season",
+      "alt": "Coach Rowling and another coach walking the baseball field",
+      "sport": "Baseball"
+    },
+    {
+      "image": "/images/photos/family.jpg",
+      "caption": "Family on the field",
+      "alt": "Coach Rowling with his wife and daughter on the field",
+      "sport": "Family"
+    }
+  ]
+}
