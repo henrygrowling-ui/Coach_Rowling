@@ -3,7 +3,7 @@ import { u } from '../lib/url';
 import Base from '../layouts/Base.astro';
 import PostCard from '../components/PostCard.astro';
 import { getCollection } from 'astro:content';
-import { site, principles, stats } from '../data/site';
+import { site, principles, stats, shortBio } from '../data/site';
 
 const posts = (await getCollection('thoughts')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 3);
 const featured = (await getCollection('playbook')).filter((p) => p.data.featured).slice(0, 4);
@@ -120,7 +120,7 @@ const fmt = (d: Date) => d.toLocaleDateString('en-US', { month: 'short', day: 'n
       <div>
         <p class="eyebrow">About Coach</p>
         <h2>{site.fullName}</h2>
-        <p>A short bio goes here: where you coach, how long you've been at it, what you care about most in a program, and the people who shaped you as a coach.</p>
+        <p>{shortBio}</p>
         <div class="hero-actions">
           <a class="btn" href={u("/contact/")}>Get in touch</a>
           <a class="btn btn--ghost" href={u("/about/")}>Read more</a>

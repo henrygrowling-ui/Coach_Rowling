@@ -3,9 +3,9 @@
 export const site = {
   name: 'Coach Rowling',
   fullName: 'Henry Rowling',
-  tagline: 'High school football and baseball coach',
+  tagline: 'Defensive coordinator · Strength & conditioning · Football and baseball coach',
   // One-line coaching philosophy shown in the homepage hero.
-  philosophy: 'Build young men who compete with discipline, play for each other, and leave the program better than they found it.',
+  philosophy: 'Success cannot be measured by wins alone. Our job is to be the bridge from adolescence to adulthood, forging HARD student athletes on and off the field.',
   email: 'coach@example.com', // TODO: replace with your real contact email
 };
 
@@ -19,28 +19,57 @@ export const nav = [
   { label: 'Contact', href: '/contact/' },
 ];
 
-// Core principles band on the homepage. Placeholder wording: rewrite in your own words.
+// Core principles band on the homepage, from Coach's coaching philosophy.
 export const principles = [
-  { title: 'Effort Is a Choice', text: 'Talent varies. Effort and attitude are the two things every player controls, every rep.' },
-  { title: 'Do Your Job', text: 'Know your assignment, execute it, and trust the man next to you to do his.' },
-  { title: 'Earn It Daily', text: 'Nothing carries over from yesterday. Spots, trust and wins are earned again today.' },
-  { title: 'Next Play', text: 'Mistakes happen. Own it, learn from it and be ready for the next snap or pitch.' },
-  { title: 'Team Before Me', text: 'The program is bigger than any one player, coach or season.' },
-  { title: 'Student First', text: 'Grades, character and how you treat people matter more than any scoreboard.' },
+  { title: 'Coach the Player First', text: 'Every kid is different. Coaching is teaching, and you have to reach each player where he is.' },
+  { title: 'Effort & Hard Work', text: 'Mistakes are OK if they come at full speed with our best effort. We can fix mistakes. It is very hard to coach effort.' },
+  { title: 'Detail Oriented', text: 'The little things get you beat. Do the common things uncommonly well and you have an immediate advantage.' },
+  { title: 'Grow Our Own', text: 'We develop, win and lose with our own kids. That is what builds buy-in from the school and the community.' },
+  { title: 'Player Focused', text: "It is about the kids, not us. If we can't put our egos aside for them, why did we get into coaching?" },
+  { title: 'Have Fun', text: "It's a game. The field, the weight room and the film room should add up to an experience players look back on fondly." },
+];
+
+// The HARD acronym from Coach's program vision.
+export const hard = [
+  { letter: 'H', word: 'Heart' },
+  { letter: 'A', word: 'Adaptable' },
+  { letter: 'R', word: 'Resilient' },
+  { letter: 'D', word: 'Dedicated' },
+];
+
+// Bio text. shortBio shows on the homepage, bio paragraphs on the About page.
+export const shortBio =
+  "Born and raised in East Cobb, Coach Rowling played football and baseball at Walton High School and went on to play baseball at the University of Georgia. Since 2018 he has built and run the strength and conditioning program at Cambridge High School, coached special teams, served as defensive coordinator since 2023, and coached baseball.";
+
+export const bio = [
+  "Henry Rowling's story runs through high school sports. Born and raised in East Cobb, he played football and baseball at Walton High School, where he learned what hard work, dedication and a real team look like. He says plainly that he wouldn't be the man he is today without high school football, and giving today's players that same experience is why he coaches.",
+  'He went on to the University of Georgia on a baseball scholarship, and worked as a strength and conditioning intern while he was there.',
+  "In 2018 Cambridge High School brought him in to build its strength and conditioning program, and he has run it ever since: every athlete in the building comes through it. He oversaw the weight room renovation, coached special teams, and has been Cambridge's defensive coordinator since 2023, developing six first- or second-team all-region linebackers. He also coaches baseball, so he knows what it takes to run a program in season and out. He holds an Ed.S. from Valdosta State University.",
+  'His philosophy is simple: coach the player first, demand full-speed effort, and win the details. Wins matter, and he wants banners and rings as much as anyone. But the measure he cares about most is being able to look a parent in the eye and say he made their son or daughter a better person.',
+];
+
+export const quickFacts = [
+  { label: 'Hometown', value: 'East Cobb, Georgia' },
+  { label: 'High school', value: 'Walton High School (football and baseball)' },
+  { label: 'College', value: 'University of Georgia (baseball scholarship)' },
+  { label: 'Graduate degree', value: 'Ed.S., Valdosta State University' },
+  { label: 'School', value: 'Cambridge High School, since 2018' },
+  { label: 'Roles', value: 'Defensive coordinator (since 2023), strength and conditioning, special teams, baseball' },
 ];
 
 // Career at a glance. Placeholder numbers: replace with your real record.
 export const stats = [
-  { value: 'XX', label: 'Seasons coaching' },
-  { value: 'XXX', label: 'Career wins' },
-  { value: 'X', label: 'Championships' },
-  { value: 'XXX+', label: 'Players coached' },
+  { value: '2018', label: 'Building Cambridge S&C since' },
+  { value: '2023', label: 'Defensive coordinator since' },
+  { value: '6', label: 'All-region linebackers developed' },
+  { value: '2', label: 'Sports coached' },
 ];
 
-// Career timeline on the About page. Placeholder entries.
+// Career timeline on the About page.
 export const timeline = [
-  { year: '20XX', title: 'Started coaching', text: 'First assistant role. Replace with your real history.' },
-  { year: '20XX', title: 'Head baseball coach', text: 'Took over the baseball program.' },
-  { year: '20XX', title: 'Football staff', text: 'Joined or led the football staff.' },
-  { year: '20XX', title: 'Milestone season', text: 'A season or moment worth remembering.' },
+  { year: 'Walton', title: 'Walton High School', text: 'Played football and baseball in East Cobb and learned what hard work and a real team look like.' },
+  { year: 'UGA', title: 'University of Georgia', text: 'Played baseball on scholarship and worked as a strength and conditioning intern.' },
+  { year: '2018', title: 'Cambridge High School', text: 'Brought in to build the strength and conditioning program. Also coached special teams and baseball, and oversaw the weight room renovation.' },
+  { year: '2023', title: 'Defensive coordinator', text: "Took over Cambridge's defense and has developed six all-region linebackers." },
+  { year: 'Ed.S.', title: 'Valdosta State University', text: 'Earned an education specialist degree.' },
 ];
