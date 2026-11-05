@@ -1,0 +1,9 @@
+[
+  { "label": "Home", "href": "/", "show": true },
+  { "label": "About", "href": "/about/", "show": true },
+  { "label": "RedClay Way", "href": "/redclay-way/", "show": true },
+  { "label": "Playbook", "href": "/playbook/", "show": true },
+  { "label": "Thoughts", "href": "/thoughts/", "show": true },
+  { "label": "Media", "href": "/media/", "show": true },
+  { "label": "Contact", "href": "/contact/", "show": true }
+]
