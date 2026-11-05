@@ -1,11 +1,12 @@
 ---
 import '../styles/global.css';
 import { site, nav } from '../data/site';
+import { u, stripBase } from '../lib/url';
 
 interface Props { title?: string; description?: string; }
 const { title, description = site.philosophy } = Astro.props;
 const pageTitle = title ? `${title} | ${site.name}` : `${site.name} | ${site.tagline}`;
-const path = Astro.url.pathname;
+const path = stripBase(Astro.url.pathname);
 const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWith(href));
 ---
 <!doctype html>
@@ -22,14 +23,14 @@ const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWit
   <body>
     <header class="site-header">
       <div class="container header-inner">
-        <a class="brand" href="/">
+        <a class="brand" href={u("/")}>
           <span class="brand-mark">R</span>
           <span class="brand-text">{site.name}</span>
         </a>
         <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
         <nav id="site-nav" class="site-nav" aria-label="Main">
           {nav.map((item) => (
-            <a href={item.href} class:list={[{ active: isActive(item.href) }]}>{item.label}</a>
+            <a href={u(item.href)} class:list={[{ active: isActive(item.href) }]}>{item.label}</a>
           ))}
         </nav>
       </div>
@@ -44,7 +45,7 @@ const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWit
           <p class="footer-tag">{site.tagline}</p>
         </div>
         <nav class="footer-nav" aria-label="Footer">
-          {nav.map((item) => <a href={item.href}>{item.label}</a>)}
+          {nav.map((item) => <a href={u(item.href)}>{item.label}</a>)}
         </nav>
       </div>
       <div class="container footer-bottom">

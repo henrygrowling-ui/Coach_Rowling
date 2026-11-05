@@ -1,4 +1,5 @@
 ---
+import { u } from '../lib/url';
 import Base from '../layouts/Base.astro';
 import PostCard from '../components/PostCard.astro';
 import { getCollection } from 'astro:content';
@@ -17,8 +18,8 @@ const fmt = (d: Date) => d.toLocaleDateString('en-US', { month: 'short', day: 'n
         <h1>{site.fullName}</h1>
         <p class="hero-lead">{site.philosophy}</p>
         <div class="hero-actions">
-          <a class="btn" href="/playbook/">Explore the Playbook</a>
-          <a class="btn btn--ghost" href="/about/">My Story</a>
+          <a class="btn" href={u("/playbook/")}>Explore the Playbook</a>
+          <a class="btn btn--ghost" href={u("/about/")}>My Story</a>
         </div>
       </div>
       <div class="photo-placeholder hero-photo">Action photo</div>
@@ -33,7 +34,7 @@ const fmt = (d: Date) => d.toLocaleDateString('en-US', { month: 'short', day: 'n
           <p class="eyebrow">What we believe</p>
           <h2>Core Principles</h2>
         </div>
-        <a class="link-arrow" href="/redclay-way/">The RedClay Way</a>
+        <a class="link-arrow" href={u("/redclay-way/")}>The RedClay Way</a>
       </div>
       <div class="grid grid-3">
         {principles.map((p, i) => (
@@ -55,11 +56,11 @@ const fmt = (d: Date) => d.toLocaleDateString('en-US', { month: 'short', day: 'n
           <p class="eyebrow">From the notebook</p>
           <h2>Latest Thoughts</h2>
         </div>
-        <a class="link-arrow" href="/thoughts/">All posts</a>
+        <a class="link-arrow" href={u("/thoughts/")}>All posts</a>
       </div>
       <div class="grid grid-3">
         {posts.map((p) => (
-          <PostCard href={`/thoughts/${p.id}/`} title={p.data.title} summary={p.data.summary} meta={`${fmt(p.data.date)} · ${p.data.sport}`} />
+          <PostCard href={u(`/thoughts/${p.id}/`)} title={p.data.title} summary={p.data.summary} meta={`${fmt(p.data.date)} · ${p.data.sport}`} />
         ))}
       </div>
     </div>
@@ -73,11 +74,11 @@ const fmt = (d: Date) => d.toLocaleDateString('en-US', { month: 'short', day: 'n
           <p class="eyebrow">Coaching materials</p>
           <h2>From the Playbook</h2>
         </div>
-        <a class="link-arrow" href="/playbook/" style="color: var(--sand)">Full playbook</a>
+        <a class="link-arrow" href={u("/playbook/")} style="color: var(--sand)">Full playbook</a>
       </div>
       <div class="grid grid-3">
         {featured.map((p) => (
-          <PostCard href={`/playbook/${p.id}/`} title={p.data.title} summary={p.data.summary} tags={[p.data.sport, p.data.type]} />
+          <PostCard href={u(`/playbook/${p.id}/`)} title={p.data.title} summary={p.data.summary} tags={[p.data.sport, p.data.type]} />
         ))}
       </div>
     </div>
@@ -95,7 +96,7 @@ const fmt = (d: Date) => d.toLocaleDateString('en-US', { month: 'short', day: 'n
           </div>
         ))}
       </div>
-      <a class="btn btn--ghost" href="/about/#timeline">See the full timeline</a>
+      <a class="btn btn--ghost" href={u("/about/#timeline")}>See the full timeline</a>
     </div>
   </section>
 
@@ -107,7 +108,7 @@ const fmt = (d: Date) => d.toLocaleDateString('en-US', { month: 'short', day: 'n
         <p class="eyebrow">Watch</p>
         <h2>Featured Video</h2>
         <p>A talk, a clinic session or a game clip goes here. Add a YouTube link and it embeds automatically.</p>
-        <a class="link-arrow" href="/media/">All media</a>
+        <a class="link-arrow" href={u("/media/")}>All media</a>
       </div>
     </div>
   </section>
@@ -121,8 +122,8 @@ const fmt = (d: Date) => d.toLocaleDateString('en-US', { month: 'short', day: 'n
         <h2>{site.fullName}</h2>
         <p>A short bio goes here: where you coach, how long you've been at it, what you care about most in a program, and the people who shaped you as a coach.</p>
         <div class="hero-actions">
-          <a class="btn" href="/contact/">Get in touch</a>
-          <a class="btn btn--ghost" href="/about/">Read more</a>
+          <a class="btn" href={u("/contact/")}>Get in touch</a>
+          <a class="btn btn--ghost" href={u("/about/")}>Read more</a>
         </div>
       </div>
     </div>

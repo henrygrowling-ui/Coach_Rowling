@@ -1,4 +1,5 @@
 ---
+import { u } from '../../lib/url';
 import Base from '../../layouts/Base.astro';
 import PageHero from '../../components/PageHero.astro';
 import { getCollection } from 'astro:content';
@@ -21,7 +22,7 @@ const sports = ['All', 'Football', 'Baseball', 'General'];
         {items.map((p) => (
           <article class="card" data-sport={p.data.sport} data-text={`${p.data.title} ${p.data.summary} ${p.data.type}`.toLowerCase()}>
             <span class="meta">{p.data.type}</span>
-            <h3><a href={`/playbook/${p.id}/`}>{p.data.title}</a></h3>
+            <h3><a href={u(`/playbook/${p.id}/`)}>{p.data.title}</a></h3>
             <p>{p.data.summary}</p>
             <div><span class="tag">{p.data.sport}</span></div>
           </article>
