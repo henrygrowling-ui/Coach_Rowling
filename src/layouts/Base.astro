@@ -4,9 +4,14 @@ import { site, nav } from '../data/site';
 import { u, stripBase } from '../lib/url';
 import Monogram from '../components/Monogram.astro';
 
-interface Props { title?: string; description?: string; }
-const { title, description = site.philosophy } = Astro.props;
+// `image` is the photo shown when a link to the page is shared (texts, social posts).
+interface Props { title?: string; description?: string; image?: string; }
+const { title, description = site.philosophy, image = '/images/social-preview.jpg' } = Astro.props;
 const pageTitle = title ? `${title} | ${site.name}` : `${site.name} | ${site.tagline}`;
+// Link previews need full web addresses, built from the site address set at publish time.
+const origin = Astro.site ?? Astro.url;
+const pageUrl = new URL(Astro.url.pathname, origin).href;
+const imageUrl = new URL(u(image), origin).href;
 const path = stripBase(Astro.url.pathname);
 const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWith(href));
 ---
@@ -17,6 +22,18 @@ const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWit
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={pageUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:alt" content={`${site.fullName} coaching on the field`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
     <link rel="icon" href={u('/favicon.svg')} type="image/svg+xml" />
     <link rel="icon" href={u('/favicon.ico')} sizes="any" />
     <link rel="apple-touch-icon" href={u('/apple-touch-icon.png')} />
