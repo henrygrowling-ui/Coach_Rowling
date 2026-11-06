@@ -191,6 +191,13 @@ content:
             options:
               path: public/images/photos
           - { name: position, label: "Photo focus: left-right then top-bottom, e.g. 80% 20% keeps the right side and the top in view", type: string }
+          - name: layout
+            label: Photo layout
+            type: select
+            options:
+              values:
+                - { name: full, label: "Full width behind the text" }
+                - { name: split, label: "Right half (best for tall photos)" }
       - name: redclayWay
         label: RedClay Way page
         type: object
@@ -204,6 +211,13 @@ content:
             options:
               path: public/images/photos
           - { name: position, label: "Photo focus: left-right then top-bottom, e.g. 80% 20% keeps the right side and the top in view", type: string }
+          - name: layout
+            label: Photo layout
+            type: select
+            options:
+              values:
+                - { name: full, label: "Full width behind the text" }
+                - { name: split, label: "Right half (best for tall photos)" }
       - name: playbook
         label: Playbook page
         type: object
@@ -217,6 +231,13 @@ content:
             options:
               path: public/images/photos
           - { name: position, label: "Photo focus: left-right then top-bottom, e.g. 80% 20% keeps the right side and the top in view", type: string }
+          - name: layout
+            label: Photo layout
+            type: select
+            options:
+              values:
+                - { name: full, label: "Full width behind the text" }
+                - { name: split, label: "Right half (best for tall photos)" }
       - name: thoughts
         label: Thoughts page
         type: object
@@ -230,6 +251,13 @@ content:
             options:
               path: public/images/photos
           - { name: position, label: "Photo focus: left-right then top-bottom, e.g. 80% 20% keeps the right side and the top in view", type: string }
+          - name: layout
+            label: Photo layout
+            type: select
+            options:
+              values:
+                - { name: full, label: "Full width behind the text" }
+                - { name: split, label: "Right half (best for tall photos)" }
       - name: media
         label: Media page
         type: object
@@ -243,6 +271,13 @@ content:
             options:
               path: public/images/photos
           - { name: position, label: "Photo focus: left-right then top-bottom, e.g. 80% 20% keeps the right side and the top in view", type: string }
+          - name: layout
+            label: Photo layout
+            type: select
+            options:
+              values:
+                - { name: full, label: "Full width behind the text" }
+                - { name: split, label: "Right half (best for tall photos)" }
       - name: contact
         label: Contact page
         type: object
@@ -256,6 +291,13 @@ content:
             options:
               path: public/images/photos
           - { name: position, label: "Photo focus: left-right then top-bottom, e.g. 80% 20% keeps the right side and the top in view", type: string }
+          - name: layout
+            label: Photo layout
+            type: select
+            options:
+              values:
+                - { name: full, label: "Full width behind the text" }
+                - { name: split, label: "Right half (best for tall photos)" }
 
   - name: menu
     label: Menu tabs (top of every page)

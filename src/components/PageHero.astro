@@ -4,15 +4,18 @@ import headers from '../data/headers.json';
 
 // Either pass `page` (a key in src/data/headers.json, editable in Pages CMS)
 // or pass the fields directly (used by post and playbook detail pages).
-interface Props { page?: keyof typeof headers; eyebrow?: string; title?: string; lead?: string; image?: string; position?: string; }
+// layout "split" puts the photo on the right half instead of behind the text (best for tall photos).
+interface Props { page?: keyof typeof headers; eyebrow?: string; title?: string; lead?: string; image?: string; position?: string; layout?: string; }
 const fromData = Astro.props.page ? headers[Astro.props.page] : {};
-const { eyebrow, title, lead, image, position } = { ...fromData, ...Astro.props } as Props;
+const { eyebrow, title, lead, image, position, layout } = { ...fromData, ...Astro.props } as Props;
 const imgUrl = image ? u(image.startsWith('/') ? image : `/images/photos/${image}`) : undefined;
-const style = imgUrl
+const split = Boolean(imgUrl) && layout === 'split';
+const style = imgUrl && !split
   ? `background-image: linear-gradient(90deg, rgba(29,42,51,0.94) 0%, rgba(29,42,51,0.78) 55%, rgba(29,42,51,0.45) 100%), url(${imgUrl}); background-size: cover; background-position: ${position || 'center'};`
   : undefined;
 ---
-<section class="page-hero" style={style}>
+<section class:list={['page-hero', { 'page-hero--split': split }]} style={style}>
+  {split && <div class="page-hero-photo" style={`background-image: url(${imgUrl}); background-position: ${position || 'center'};`} />}
   <div class="container">
     {eyebrow && <p class="eyebrow" style="color: var(--clay)">{eyebrow}</p>}
     <h1>{title}</h1>

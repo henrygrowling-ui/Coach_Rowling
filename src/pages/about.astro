@@ -3,6 +3,13 @@ import Base from '../layouts/Base.astro';
 import PageHero from '../components/PageHero.astro';
 import { u } from '../lib/url';
 import { site, stats, timeline, bio, quickFacts } from '../data/site';
+import { photos } from '../data/photos';
+import headers from '../data/headers.json';
+
+// Family photos come from the Photos list in Pages CMS (Category: Family).
+// The one used as the About header is left out so it doesn't show twice.
+const headerFile = (headers.about?.image ?? '').split('/').pop();
+const family = photos.filter((p) => p.sport === 'Family' && p.file !== headerFile);
 ---
 <Base title="About">
   <PageHero page="about" />
@@ -22,12 +29,19 @@ import { site, stats, timeline, bio, quickFacts } from '../data/site';
   </section>
 
   <section class="section section--sand">
-    <div class="container family-row">
-      <img class="family-photo" src={u('/images/photos/family.jpg')} alt="Coach Rowling with his wife and daughter on the field" loading="lazy" />
-      <div>
+    <div class="container">
+      <div class="family-intro">
         <p class="eyebrow">Off the field</p>
         <h2>Family</h2>
         <p>Coaching is a family commitment. His wife is all in on the program, and these days their daughter is on the sideline too.</p>
+      </div>
+      <div class="family-grid">
+        {family.map((p) => (
+          <figure>
+            <img src={u(`/images/photos/${p.file}`)} alt={p.alt} loading="lazy" />
+            <figcaption>{p.caption}</figcaption>
+          </figure>
+        ))}
       </div>
     </div>
   </section>
@@ -62,9 +76,11 @@ import { site, stats, timeline, bio, quickFacts } from '../data/site';
   .facts dd { margin: 0; color: var(--ink-soft); }
   @media (max-width: 520px) { .facts { grid-template-columns: 1fr; gap: 2px; } .facts dd { margin-bottom: 10px; } }
   .headshot { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: top; border-radius: var(--radius); }
-  .family-row { display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: center; }
-  .family-photo { width: 100%; border-radius: var(--radius); }
-  @media (max-width: 820px) { .family-row { grid-template-columns: 1fr; } }
+  .family-intro { max-width: 640px; margin-bottom: 32px; }
+  .family-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+  .family-grid figure { margin: 0; }
+  .family-grid img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 30%; border-radius: var(--radius); display: block; }
+  .family-grid figcaption { margin-top: 8px; color: var(--ink-soft); font-size: 0.95rem; }
   .about-row { display: grid; grid-template-columns: 1fr 1.6fr; gap: 48px; align-items: start; }
   .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 24px; }
   .stat { display: flex; flex-direction: column; }
