@@ -83,6 +83,30 @@
       "caption": "Family on the field",
       "alt": "Coach Rowling with his wife and daughter on the field",
       "sport": "Family"
+    },
+    {
+      "image": "/images/photos/family-stadium.jpg",
+      "caption": "Game night with my daughter",
+      "alt": "Coach Rowling smiling and holding his daughter on the track before a game",
+      "sport": "Family"
+    },
+    {
+      "image": "/images/photos/family-walk.jpg",
+      "caption": "Walking the field together",
+      "alt": "Coach Rowling carrying his daughter across the field",
+      "sport": "Family"
+    },
+    {
+      "image": "/images/photos/family-whistle.jpg",
+      "caption": "Future coach",
+      "alt": "Coach Rowling's daughter holding his whistle",
+      "sport": "Family"
+    },
+    {
+      "image": "/images/photos/family-field.jpg",
+      "caption": "First steps on the turf",
+      "alt": "Coach Rowling kneeling beside his daughter on the football field",
+      "sport": "Family"
     }
   ]
 }

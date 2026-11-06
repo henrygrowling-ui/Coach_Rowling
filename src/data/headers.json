@@ -3,42 +3,48 @@
     "eyebrow": "My Story",
     "title": "Henry Rowling",
     "lead": "Success cannot be measured by wins alone. Our job is to be the bridge from adolescence to adulthood, forging HARD student athletes on and off the field.",
-    "image": "/images/photos/fist-bump.jpg",
-    "position": "80% 22%"
+    "image": "/images/photos/family-stadium.jpg",
+    "position": "50% 38%",
+    "layout": "split"
   },
   "redclayWay": {
     "eyebrow": "Our identity",
     "title": "The RedClay Way",
     "lead": "What this page holds is up to Coach. Placeholder: the standards, culture and identity of the program.",
     "image": "/images/photos/team-walkout.jpg",
-    "position": "60% 30%"
+    "position": "60% 30%",
+    "layout": "full"
   },
   "playbook": {
     "eyebrow": "Coaching materials",
     "title": "Playbook",
     "lead": "Drills, practice plans, systems and program-building materials for football and baseball.",
     "image": "/images/photos/player-coaching.jpg",
-    "position": "75% 30%"
+    "position": "75% 30%",
+    "layout": "full"
   },
   "thoughts": {
     "eyebrow": "From the notebook",
     "title": "Thoughts",
     "lead": "Reflections on coaching, leadership, seasons and the lessons that came with them.",
     "image": "/images/photos/sideline-headset.jpg",
-    "position": "60% 42%"
+    "position": "60% 42%",
+    "layout": "full"
   },
   "media": {
     "eyebrow": "Watch and look back",
     "title": "Media",
     "lead": "Photos, videos, talks and press.",
     "image": "/images/photos/celebration.jpg",
-    "position": "80% 35%"
+    "position": "80% 35%",
+    "layout": "full"
   },
   "contact": {
     "eyebrow": "Get in touch",
     "title": "Contact",
     "lead": "Clinics, speaking, camps, or questions from coaches, players and parents.",
     "image": "/images/photos/baseball-field.jpg",
-    "position": "55% 12%"
+    "position": "55% 12%",
+    "layout": "full"
   }
 }
