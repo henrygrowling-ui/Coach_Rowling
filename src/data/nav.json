@@ -14,20 +14,20 @@
     },
     {
       "position": 3,
-      "label": "Playbook",
-      "href": "/playbook/",
-      "show": true
-    },
-    {
-      "position": 4,
       "label": "Thoughts",
       "href": "/thoughts/",
       "show": true
     },
     {
-      "position": 5,
+      "position": 4,
       "label": "Media",
       "href": "/media/",
+      "show": true
+    },
+    {
+      "position": 5,
+      "label": "Playbook",
+      "href": "/playbook/",
       "show": true
     },
     {
