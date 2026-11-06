@@ -20,14 +20,14 @@
     },
     {
       "position": 4,
-      "label": "Media",
-      "href": "/media/",
+      "label": "Playbook",
+      "href": "/playbook/",
       "show": true
     },
     {
       "position": 5,
-      "label": "Playbook",
-      "href": "/playbook/",
+      "label": "Media",
+      "href": "/media/",
       "show": true
     },
     {
