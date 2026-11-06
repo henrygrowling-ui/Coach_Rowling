@@ -79,6 +79,18 @@
       "sport": "Baseball"
     },
     {
+      "image": "/images/photos/family-porch.jpg",
+      "caption": "The three of us",
+      "alt": "Coach Rowling with his wife and daughter on a porch",
+      "sport": "Family"
+    },
+    {
+      "image": "/images/photos/family-gameday.jpg",
+      "caption": "Game day crew",
+      "alt": "Coach Rowling, his wife and daughter at the stadium before a game",
+      "sport": "Family"
+    },
+    {
       "image": "/images/photos/family-stadium.jpg",
       "caption": "Game night with my daughter",
       "alt": "Coach Rowling smiling and holding his daughter on the track before a game",
