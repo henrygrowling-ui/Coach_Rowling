@@ -21,7 +21,6 @@ const filters = ['All', 'Football', 'Baseball', 'Family'];
         {photos.map((p) => (
           <a href={u(`/images/photos/${p.file}`)} data-sport={p.sport} class="g-item">
             <img src={u(`/images/photos/${p.file}`)} alt={p.alt} loading="lazy" />
-            <span>{p.caption}</span>
           </a>
         ))}
       </div>
@@ -66,8 +65,4 @@ const filters = ['All', 'Football', 'Baseball', 'Family'];
   .g-item[hidden] { display: none; }
   .g-item img { width: 100%; transition: transform 0.3s; }
   .g-item:hover img { transform: scale(1.03); }
-  .g-item span {
-    position: absolute; left: 0; right: 0; bottom: 0; padding: 24px 14px 10px; color: var(--white);
-    background: linear-gradient(transparent, rgba(0,0,0,0.65)); font-family: var(--font-head); text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.9rem;
-  }
 </style>
