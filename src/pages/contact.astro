@@ -4,9 +4,10 @@ import PageHero from '../components/PageHero.astro';
 import { site } from '../data/site';
 import { u } from '../lib/url';
 
-// GitHub Pages can't receive form posts, so FormSubmit (formsubmit.co) emails each message to site.email.
-// The very first message triggers a one-time "activate" email from FormSubmit that must be confirmed.
-const formAction = `https://formsubmit.co/${site.email}`;
+// GitHub Pages can't receive form posts, so Web3Forms (web3forms.com) emails each message to Coach.
+// The access key only lets people send to that inbox; Web3Forms says it is safe to publish.
+const formAction = 'https://api.web3forms.com/submit';
+const web3formsKey = 'd8edebb0-4274-4e8b-a870-1bf35115d800';
 const thanksUrl = new URL(u('/contact/thanks/'), Astro.site ?? Astro.url).href;
 ---
 <Base title="Contact">
@@ -23,10 +24,11 @@ const thanksUrl = new URL(u('/contact/thanks/'), Astro.site ?? Astro.url).href;
         <p>Email: <a href={`mailto:${site.email}`}>{site.email}</a></p>
       </div>
       <form class="card contact-form" name="contact" method="POST" action={formAction}>
-        <input type="hidden" name="_subject" value={`New message from the ${site.name} website`} />
-        <input type="hidden" name="_template" value="table" />
-        <input type="hidden" name="_next" value={thanksUrl} />
-        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <input type="hidden" name="access_key" value={web3formsKey} />
+        <input type="hidden" name="subject" value={`New message from the ${site.name} website`} />
+        <input type="hidden" name="from_name" value={`${site.name} website`} />
+        <input type="hidden" name="redirect" value={thanksUrl} />
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
         <label>Name<input name="name" required /></label>
         <label>Email<input type="email" name="email" required /></label>
         <label>Message<textarea name="message" rows="5" required></textarea></label>
